@@ -1,2 +1,2 @@
-# privacy-usb-guide
+index.html
 Privacy USB – Interactive User Guide
