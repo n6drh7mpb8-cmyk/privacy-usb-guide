@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy USB — Interactive Guide</title>
+<style>
+:root{--bg:#0b1220;--panel:#111c2e;--panel2:#17263b;--ink:#edf4ff;--muted:#a9bad0;--accent:#57d6c6;--line:#2a3d55}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#08101d,#101c2d);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.wrap{max-width:1050px;margin:auto;padding:24px}.hero{padding:30px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(135deg,#14243a,#0d1727);margin-bottom:18px}
+.eyebrow{color:var(--accent);font-size:.78rem;letter-spacing:.16em;font-weight:800}.hero h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;margin:.5rem 0}.hero p{color:var(--muted);max-width:720px}
+.layout{display:grid;grid-template-columns:270px 1fr;gap:18px}.nav,.content{border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:18px}.nav h2{font-size:1rem;margin:0 0 12px}.nav button{display:block;width:100%;text-align:left;margin:7px 0;padding:12px;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--ink);font:inherit;cursor:pointer}.nav button[aria-current="page"],.nav button:hover{background:var(--panel2);border-color:var(--line)}.num{color:var(--accent);font-weight:800;margin-right:8px}
+.content h2{margin-top:0;font-size:1.7rem}.content h3{margin-top:1.4rem}.content p,.content li{color:#d6e2f1}.callout{border-left:4px solid var(--accent);padding:12px 15px;background:#14283a;border-radius:0 10px 10px 0;margin:16px 0}.warn{border-left-color:#ffbf69;background:#302719}.muted{color:var(--muted)!important}.steps li{margin:8px 0}.footer{color:var(--muted);font-size:.85rem;margin:18px 2px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.actions a{color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--panel2)}.progress{height:5px;background:#223248;border-radius:9px;overflow:hidden;margin:14px 0}.progress span{display:block;height:100%;width:16.6667%;background:var(--accent);transition:width .2s}
+@media(max-width:720px){.wrap{padding:12px}.layout{grid-template-columns:1fr}.nav{padding:12px}.nav button{display:inline-block;width:auto;margin:4px 2px}.content{padding:18px}}
+@media print{body{background:white!important;color:#111!important}.wrap{max-width:none;padding:0}.hero,.nav,.content{background:white;color:#111;border:1px solid #bbb}.layout{display:block}.nav{display:none}.content p,.content li,.hero p,.muted{color:#222!important}.chapter,.chapter[hidden]{display:block!important;visibility:visible!important;page-break-after:always;break-after:page}.actions{display:none!important}.footer{color:#333!important}.callout{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+<div class="eyebrow">PRIVACY USB · ESSENTIAL GUIDE</div>
+<h1>Start safer.<br>Understand your privacy.</h1>
+<p>An offline-friendly beginner's guide to preparing for Tails, booting from USB, connecting to Tor and avoiding common privacy mistakes.</p>
+<div class="callout warn"><strong>Important:</strong> This guide is educational. No tool guarantees complete anonymity. Tails does not protect against every threat, and your actions can still identify you.</div>
+</header>
+<div class="layout">
+<nav class="nav" aria-label="Guide chapters">
+<h2>Guide contents</h2>
+<button data-chapter="start" aria-current="page"><span class="num">01</span>Start Here</button>
+<button data-chapter="setup"><span class="num">02</span>First-time USB Setup</button>
+<button data-chapter="boot"><span class="num">03</span>Boot from USB</button>
+<button data-chapter="tor"><span class="num">04</span>Connect to Tor</button>
+<button data-chapter="privacy"><span class="num">05</span>Protect Your Privacy</button>
+<button data-chapter="trouble"><span class="num">06</span>Troubleshooting</button>
+<div class="progress" aria-hidden="true"><span id="progress"></span></div>
+<p class="muted" id="chapter-count">Chapter 1 of 6</p>
+<div class="actions"><a href="https://tails.net/" target="_blank" rel="noopener">Official Tails website ↗</a></div>
+</nav>
+<main class="content">
+<section class="chapter" id="start">
+<h2>01 · Start Here</h2>
+<p>Welcome to your Privacy USB guide. Read this chapter before restarting your computer.</p>
+<h3>What is Tails?</h3>
+<p>Tails is a live operating system designed to help protect privacy. It runs from a USB drive and routes supported internet connections through Tor. It is not a promise of perfect anonymity.</p>
+<h3>Before you begin</h3>
+<ul class="steps">
+<li>Save your work and close open applications.</li>
+<li>Use a computer compatible with Tails. Hardware and Wi-Fi support can vary.</li>
+<li>Keep this guide available on another device or in a browser before rebooting.</li>
+<li>Never use a USB drive whose origin or integrity you do not trust.</li>
+</ul>
+<div class="callout"><strong>Data warning:</strong> Creating a Tails USB erases the target USB drive. Make sure the correct drive is selected during preparation.</div>
+<h3>Official documentation</h3>
+<p>For the latest requirements and installation steps, use <a href="https://tails.net/install/" target="_blank" rel="noopener">the official Tails installation guide</a>. This guide is a companion, not a replacement for official instructions.</p>
+</section>
+<section class="chapter" id="setup" hidden>
+<h2>02 · First-time USB Setup</h2>
+<p>Use this checklist when you receive your Privacy USB for the first time. These steps assume the drive has already been prepared and tested by the seller.</p>
+<h3>Before plugging it in</h3>
+<ol class="steps">
+<li>Read this guide first. Keep it open on this computer or, ideally, on a separate phone or computer while you start Tails.</li>
+<li>Save any open work on the computer you plan to use and close your applications.</li>
+<li>Check that you have the correct USB drive. This product has USB-A and USB-C connectors; use the connector that fits your computer without forcing it.</li>
+<li>If you need to protect important files, back them up before changing any computer settings. You normally do not need to change firmware settings just to try the boot menu.</li>
+</ol>
+<div class="callout warn"><strong>Important:</strong> If this USB was supplied ready to use, do not run the Tails installer or repeat the USB creation process on this same drive. Creating or reinstalling Tails can erase the drive and its contents.</div>
+<h3>Start the first session</h3>
+<ol class="steps">
+<li>Insert the prepared USB into the computer that you want to test.</li>
+<li>Restart the computer and open its one-time boot menu. The key varies by manufacturer; common examples are F12, F9, F11 or Esc.</li>
+<li>Select the USB device (choose the appropriate USB/UEFI entry if more than one is shown).</li>
+<li>When Tails starts, follow the on-screen Welcome Screen prompts. Continue to the Tor chapter in this guide for connection guidance.</li>
+</ol>
+<h3>Where should the guide live?</h3>
+<p>Keep a copy of this HTML guide on another device or in a browser before rebooting. A Tails USB does not automatically provide an ordinary, easily accessible place for extra guide files, and its partitions may not appear as expected in another operating system.</p>
+<div class="callout"><strong>First test:</strong> Try the USB on a compatible spare computer before relying on it. Hardware, boot options and Wi-Fi support can vary.</div>
+<p><a href="https://tails.net/install/" target="_blank" rel="noopener">Check the official Tails instructions ↗</a></p>
+</section>
+<section class="chapter" id="boot" hidden>
+<h2>03 · Boot from USB</h2>
+<ol class="steps">
+<li>Insert the prepared Tails USB drive.</li>
+<li>Restart or power on the computer.</li>
+<li>Immediately press the computer's boot-menu key. Common keys include F12, F9, F11 or Esc, but the correct key depends on the manufacturer.</li>
+<li>Choose the USB device from the boot menu. If several entries appear, select the appropriate USB/UEFI entry for your computer.</li>
+<li>Follow the Tails startup and Welcome Screen prompts.</li>
+</ol>
+<div class="callout warn"><strong>Do not guess.</strong> If you are unsure which device is the USB, stop and check the computer's manual. Avoid changing firmware settings unless necessary.</div>
+<h3>If the USB does not appear</h3>
+<ul><li>Try another USB port.</li><li>Check the manufacturer's instructions for the boot-menu key.</li><li>Consult the official Tails troubleshooting page before changing Secure Boot or firmware settings.</li></ul>
+<p><a href="https://tails.net/install/" target="_blank" rel="noopener">Official installation and startup instructions ↗</a></p>
+</section>
+<section class="chapter" id="tor" hidden>
+<h2>04 · Connect to Tor</h2>
+<ol class="steps">
+<li>When Tails starts, follow the Welcome Screen instructions.</li>
+<li>Connect to a supported network, such as Wi-Fi or Ethernet.</li>
+<li>Follow Tails' instructions for connecting to Tor. Network restrictions may require additional steps.</li>
+<li>Wait until the system indicates that the Tor connection is ready before browsing.</li>
+</ol>
+<div class="callout"><strong>What Tor helps with:</strong> Tor is designed to make it harder for websites to link your connection to your ordinary IP address and to reduce some forms of network tracking.</div>
+<div class="callout warn"><strong>What Tor does not do:</strong> It does not make every activity anonymous. Logging into personal accounts, sharing identifying details, downloading and opening files unsafely, or installing extra software can expose information.</div>
+<p>Learn more at the <a href="https://tails.net/doc/anonymous_internet/tor/" target="_blank" rel="noopener">official Tails Tor documentation ↗</a>.</p>
+</section>
+<section class="chapter" id="privacy" hidden>
+<h2>05 · Protect Your Privacy</h2>
+<h3>Everyday checklist</h3>
+<ul class="steps">
+<li><strong>Separate identities:</strong> signing into a personal account can identify you even when using Tor.</li>
+<li><strong>Think before sharing:</strong> names, photos, locations, metadata and personal details can reveal who you are.</li>
+<li><strong>Keep the system current:</strong> follow official Tails update instructions.</li>
+<li><strong>Use trusted sources:</strong> install or download software only when necessary and from official sources.</li>
+<li><strong>Be cautious with files:</strong> documents and downloads can contain identifying content or create risks when opened outside the intended environment.</li>
+<li><strong>Shut down when finished:</strong> Tails is designed to minimise traces on the computer, but no system can guarantee that every trace is removed in every circumstance.</li>
+</ul>
+<h3>Remember</h3>
+<p>Privacy depends on your behaviour, your device, your network and your threat model—not just the operating system. Use the official documentation to understand the limitations that apply to your situation.</p>
+<p><a href="https://tails.net/doc/about/warnings/" target="_blank" rel="noopener">Read Tails' official warnings ↗</a></p>
+</section>
+<section class="chapter" id="trouble" hidden>
+<h2>06 · Troubleshooting</h2>
+<h3>The computer starts its usual operating system</h3>
+<p>Restart and open the boot menu again. Select the USB device rather than the internal drive. The boot-menu key differs by computer.</p>
+<h3>The USB is not listed</h3>
+<p>Try a different port, check the firmware's boot options, and consult the computer manufacturer's instructions. Do not change firmware settings blindly.</p>
+<h3>Tails starts but Wi-Fi is missing</h3>
+<p>Some wireless adapters are not supported. If possible, try Ethernet, then consult the official hardware and troubleshooting documentation.</p>
+<h3>The computer freezes or the screen stays blank</h3>
+<p>Compatibility varies. Check the official troubleshooting instructions for your exact symptom before trying startup options.</p>
+<h3>Where to get reliable help</h3>
+<ul><li><a href="https://tails.net/doc/" target="_blank" rel="noopener">Tails documentation</a></li><li><a href="https://tails.net/support/" target="_blank" rel="noopener">Tails support</a></li><li><a href="https://tails.net/install/" target="_blank" rel="noopener">Tails installation guide</a></li></ul>
+<div class="callout warn"><strong>Product note:</strong> This USB must be tested on compatible hardware before sale. Do not claim universal compatibility or guaranteed anonymity.</div>
+</section>
+<div class="actions">
+<button id="prev" type="button" style="border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--panel2);color:var(--ink);cursor:pointer">← Previous</button>
+<button id="next" type="button" style="border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--accent);color:#081522;font-weight:800;cursor:pointer">Next chapter →</button>
+<button id="print" type="button" style="border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--panel2);color:var(--ink);cursor:pointer">Print / Save as PDF</button>
+</div>
+</main>
+</div>
+<p class="footer">Privacy USB is an independent educational guide and is not affiliated with or endorsed by the Tails project. Tails is free software. Check current official documentation before use.</p>
+</div>
+<script>
+const ids=["start","setup","boot","tor","privacy","trouble"];let current=0;
+const buttons=[...document.querySelectorAll("[data-chapter]")];
+function show(i){current=(i+ids.length)%ids.length;ids.forEach((id,n)=>document.getElementById(id).hidden=n!==current);buttons.forEach((b,n)=>{if(n===current)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});document.getElementById("progress").style.width=((current+1)/ids.length*100)+"%";document.getElementById("chapter-count").textContent=`Chapter ${current+1} of ${ids.length}`;document.getElementById("prev").disabled=current===0;document.getElementById("next").textContent=current===ids.length-1?"Back to first chapter →":"Next chapter →";}
+buttons.forEach((b,i)=>b.addEventListener("click",()=>show(i)));
+document.getElementById("prev").addEventListener("click",()=>show(current-1));
+document.getElementById("next").addEventListener("click",()=>show(current+1));
+const printButton=document.getElementById("print");
+function restoreGuideAfterPrint(){show(current);document.body.classList.remove("printing-guide");}
+window.addEventListener("afterprint",restoreGuideAfterPrint);
+printButton.addEventListener("click",()=>{
+  // Reveal every chapter before opening the browser's print dialog.
+  document.body.classList.add("printing-guide");
+  ids.forEach(id=>{document.getElementById(id).hidden=false;});
+  // Give the browser a frame to apply print styles before printing.
+  requestAnimationFrame(()=>window.print());
+});
+show(0);
+</script>
+</body>
+</html>
